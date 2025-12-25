@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - School Management System</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/UI/css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid p-0">
+        <div class="row vh-100 g-0">
+            <div class="col-12 col-md-4 col-lg-3 text-center shadow-lg nav-bar top-0 bottom-0" style="background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);">
+                <img src="~/images/Nav-grad-image.jpg" alt="School Logo"
+                     class="rounded-circle bg-white p-2 border border-3 border-white border-opacity-25 mx-auto mt-4 mb-3"
+                     style="width: 120px; height: 120px; object-fit: cover;" />
+
+                <h3 class="text-white fw-bold fs-1 mb-1" style="font-family: 'Playfair Display', serif;">Admin</h3>
+                <h4 class="text-white-50 fw-light mb-4">Egypt, Cairo</h4>
+
+                <div class="d-flex flex-column flex-grow-1 rounded-top-4 p-3 pt-4" style="background: rgba(255,255,255,0.1);">
+                    <ul class="list-unstyled mb-0 overflow-y-auto overflow-x-hidden flex-fill" style="max-height: 582px">
+                        <li class="mb-3">
+                            <a asp-controller="Admin" asp-action="Index"
+                               class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               role="button" aria-expanded="false" aria-controls="homeMenu"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;">
+                                <i class="fa-solid fa-house me-3 fs-5"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               data-bs-toggle="collapse" data-bs-target="#classesMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;cursor: pointer"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-users-rectangle me-3 fs-5"></i> Class
+                                <i class="fa-solid fa-chevron-down ms-auto"></i>
+                            </a>
+
+                            <div class="collapse mt-2" id="classesMenu">
+                                <ul class="list-unstyled ps-4">
+                                    <li class="mb-2" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0)'">
+                                        <a asp-controller="School_Class" asp-action="AddClass" class="text-white text-decoration-none p-3 d-inline-block w-100 h-100">
+                                            <i class="fa-solid fa-rectangle-list"></i> Add Class
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">
+                                            <i class="fa-solid fa-file-invoice-dollar"></i> Class Fees
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               role="button" aria-expanded="false" aria-controls="subjectsMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-file-pen me-3 fs-5"></i>Subjects
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               data-bs-toggle="collapse" data-bs-target="#teachersMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-person-chalkboard me-3 fs-5"></i>Teachers
+                                <i class="fa-solid fa-chevron-down ms-auto"></i>
+                            </a>
+
+                            <div class="collapse mt-2" id="teachersMenu">
+                                <ul class="list-unstyled ps-4">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">Add Teacher</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">View Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none">Manage Teachers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               data-bs-toggle="collapse" data-bs-target="#studentsMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-user-graduate me-3 fs-5"></i>Students
+                                <i class="fa-solid fa-chevron-down ms-auto"></i>
+                            </a>
+
+                            <div class="collapse mt-2" id="studentsMenu">
+                                <ul class="list-unstyled ps-4">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">Add Student</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">View Students</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none">Manage Students</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               data-bs-toggle="collapse" data-bs-target="#ExamsMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-paste me-3 fs-5"></i>Examination
+                                <i class="fa-solid fa-chevron-down ms-auto"></i>
+                            </a>
+
+                            <div class="collapse mt-2" id="ExamsMenu">
+                                <ul class="list-unstyled ps-4">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">Add Exam</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">View Exams</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none">Manage Exams</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <a class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
+                               data-bs-toggle="collapse" data-bs-target="#attendancesMenu"
+                               style="background: rgba(220, 53, 69, 0.8); transition: all 0.3s ease;"
+                               onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
+                               onmouseout="this.style.background='rgba(220, 53, 69, 0.8)'; this.style.transform='translateX(0)';">
+                                <i class="fa-solid fa-clipboard-user me-3 fs-5"></i>Attendance
+                                <i class="fa-solid fa-chevron-down ms-auto"></i>
+                            </a>
+
+                            <div class="collapse mt-2" id="attendancesMenu">
+                                <ul class="list-unstyled ps-4">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">Mark Attendance</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-white text-decoration-none">View Attendance</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-white text-decoration-none">Manage Attendance</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="text-center mt-3">
+                        <a href="#" class="btn btn-outline-light border-2 rounded-3 px-4 py-2 fw-semibold">
+                            <i class="fa-solid fa-right-from-bracket me-2"></i>Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-9 ms-auto">
+                <div class="bg-gradient bg-light d-flex align-items-center px-5 shadow-sm" style="height: 85px;">
+                    <h1 class="fw-bold mb-0 display-5"
+                        style="font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Egypt Arabic High School
+                    </h1>
+                </div>
+                <div class="p-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: calc(100vh - 85px);">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    @* <script src="~/lib/jquery/dist/jquery.js"></script> *@
+    @* <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script> *@
+    @* <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script> *@
+    @* @await RenderSectionAsync("Scripts", required: false) *@
+</body>
+</html>

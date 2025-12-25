@@ -1,0 +1,11 @@
+﻿@media (max-width: 767px) {
+    .nav-bar {
+        position: static;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-bar {
+        position: fixed;
+    }
+}

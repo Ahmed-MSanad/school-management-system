@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\School.Data\School.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="RepoImplementations\" />
+    <Folder Include="RepoInterfaces\" />
+  </ItemGroup>
+
 </Project>
