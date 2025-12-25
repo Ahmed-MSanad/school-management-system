@@ -23,7 +23,7 @@
                 <div class="d-flex flex-column flex-grow-1 rounded-top-4 p-3 pt-4" style="background: rgba(255,255,255,0.1);">
                     <ul class="list-unstyled mb-0 overflow-y-auto overflow-x-hidden flex-fill" style="max-height: 582px">
                         <li class="mb-3">
-                            <a asp-controller="Admin" asp-action="Index"
+                            <a asp-controller="Home" asp-action="Index"
                                class="text-white text-decoration-none d-flex align-items-center p-3 rounded-3 fw-medium shadow"
                                role="button" aria-expanded="false" aria-controls="homeMenu"
                                onmouseover="this.style.background='rgba(220, 53, 69, 1)'; this.style.transform='translateX(8px)';"
@@ -46,7 +46,7 @@
                             <div class="collapse mt-2" id="classesMenu">
                                 <ul class="list-unstyled ps-4">
                                     <li class="mb-2" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0)'">
-                                        <a asp-controller="School_Class" asp-action="AddClass" class="text-white text-decoration-none p-3 d-inline-block w-100 h-100">
+                                        <a asp-controller="SchoolClass" asp-action="GetSchoolClass" class="text-white text-decoration-none p-3 d-inline-block w-100 h-100">
                                             <i class="fa-solid fa-rectangle-list"></i> Add Class
                                         </a>
                                     </li>

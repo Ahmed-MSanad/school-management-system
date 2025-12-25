@@ -1,0 +1,44 @@
+﻿@model SchoolClassViewModel
+
+@{
+    ViewData["Title"] = "School Classes";
+}
+
+<div class="container py-5">
+    @if (Model.Classes is not null && Model.Classes.Any())
+    {
+        <div class="row mt-5">
+            <div class="col">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Existing Classes</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Class Name</th>
+                                        <th>Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (School_Class schoolClass in Model.Classes)
+                                    {
+                                        <tr>
+                                            <td>@schoolClass.Id</td>
+                                            <td>@schoolClass.Name</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>No Classes to Show</h2>
+    }
+</div>

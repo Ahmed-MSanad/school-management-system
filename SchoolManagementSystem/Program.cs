@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using School.Data.Contexts;
+using School.Repository.RepoImplementations;
+using School.Repository.RepoInterfaces;
+using School.Service.ServiceImplementations;
+using School.Service.ServiceInterfaces;
 
 namespace SchoolManagementSystem
 {
@@ -17,6 +21,9 @@ namespace SchoolManagementSystem
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolDbConnection"));
             });
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<ISchoolClassService, SchoolClassService>();
 
             #endregion
 

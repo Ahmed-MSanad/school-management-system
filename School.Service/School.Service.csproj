@@ -10,9 +10,4 @@
     <ProjectReference Include="..\School.Repository\School.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ServiceInterfaces\" />
-    <Folder Include="ServiceImplementations\" />
-  </ItemGroup>
-
 </Project>
