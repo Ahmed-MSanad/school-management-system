@@ -51,7 +51,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Exams");
+                    b.ToTable("Exams", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Expense", b =>
@@ -77,7 +77,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Expenses");
+                    b.ToTable("Expenses", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Fees", b =>
@@ -98,7 +98,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.ToTable("Fees");
+                    b.ToTable("Fees", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.School_Class", b =>
@@ -114,7 +114,7 @@ namespace School.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("School_Classes");
+                    b.ToTable("School_Classes", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Student", b =>
@@ -150,7 +150,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.StudentAttendance", b =>
@@ -182,7 +182,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("StudentAttendances");
+                    b.ToTable("StudentAttendances", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Subject", b =>
@@ -203,7 +203,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("ClassId");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Teacher", b =>
@@ -237,7 +237,7 @@ namespace School.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teachers", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.TeacherAttendance", b =>
@@ -261,7 +261,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("TeacherAttendances");
+                    b.ToTable("TeacherAttendances", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.TeacherSubject", b =>
@@ -289,7 +289,7 @@ namespace School.Data.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("TeacherSubjects");
+                    b.ToTable("TeacherSubjects", (string)null);
                 });
 
             modelBuilder.Entity("School.Data.Entities.Exam", b =>

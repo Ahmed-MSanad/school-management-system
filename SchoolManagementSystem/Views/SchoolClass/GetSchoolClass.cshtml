@@ -5,6 +5,30 @@
 }
 
 <div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h3 class="text-center fw-bold mb-4">Add New Class</h3>
+                    <form asp-controller="SchoolClass" asp-action="AddClass" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Class.Name" class="form-label fw-semibold">
+                                Class Name
+                            </label>
+                            <input asp-for="Class.Name" class="form-control form-control-lg" placeholder="Enter class name" />
+                            <span asp-validation-for="Class.Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Add Class</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @if (Model.Classes is not null && Model.Classes.Any())
     {
         <div class="row mt-5">
