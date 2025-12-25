@@ -67,7 +67,31 @@
                                     {
                                         <tr>
                                             <td>@schoolClass.Id</td>
-                                            <td>@schoolClass.Name</td>
+                                            <td>
+                                                @if (Model.EditingId == @schoolClass.Id)
+                                                {
+                                                    <form asp-controller="SchoolClass" asp-action="Update" method="post" class="d-flex align-items-center justify-content-center">
+                                                        <input asp-for="Class.Name" class="form-control form-control-lg" placeholder="New class name" required />
+                                                        <span asp-validation-for="Class.Name" class="text-danger"></span>
+                                                        <input type="hidden" asp-for="Class.Id" />
+                                                        <button type="submit" class="btn btn-sm btn-primary ms-2">Update</button>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    @schoolClass.Name
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (Model.EditingId == @schoolClass.Id)
+                                                {
+                                                    <a asp-action="GetSchoolClass" class="btn btn-sm btn-secondary">Cancel</a>
+                                                }
+                                                else
+                                                {
+                                                    <a asp-action="GetSchoolClass" asp-route-editingId="@schoolClass.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                                }
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>
@@ -83,3 +107,6 @@
         <h2>No Classes to Show</h2>
     }
 </div>
+@* @section Scripts{ *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+@* } *@
